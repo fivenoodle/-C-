@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS 1 //这个是高版的VS默认不让使用scanf,fopen等函数,说是scanf,fopen等函数不安全,而代替其函数的是scanf_s,fopen_s等函数,后边有个"_s"的形式
+#include<stdio.h> //定义输入输出函数
+
+//输出的基本格式(快捷键ctrl+f5/ctrl+fn+f5)
+int main()
+{
+    int a =100;
+    printf("a=%d\n",a);
+    return 0;
+}
+
+
+//简单的加法 (注意这串代码当你运行后可能会出现没有结果，此时你要将你的加数打入调试控制台并以空格隔开)
+int main()
+{
+    int num1 =1;
+    int num2 =2;
+    
+    scanf("%d %d",&num1,&num2); //注意这里一定有两个& 意思是先输入一个数字，然后加一个逗号，再输入一个数字  scanf_f只能被VS(Visual Studio)认识
+    
+    int sum =num1+num2;
+    
+    printf("sum=%d",sum);
+    
+    return 0;
+}
+
+
+
+
+
