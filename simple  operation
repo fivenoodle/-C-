@@ -18,17 +18,53 @@ int main()
     
     scanf("%d %d",&num1,&num2); //注意这里一定有两个& 意思是先输入一个数字，然后加一个逗号，再输入一个数字  scanf_f只能被VS(Visual Studio)认识
     
-    int sum =num1+num2;
+    int sum = num1+num2;
     
     printf("sum=%d",sum);
     
     return 0;
 }
-//变量的作用域(作用范围)  分为 局部 全局
+//变量的作用域(作用范围)  分为 局部 全局(变量的作用范围是整个工程)
+
+//全局中的函数调用
+int a=10;
+void test()
+{
+    printf("test-->%d\n",a);
+}
+int main()
+{
+    test();//函数的调用
+    {
+    printf("a=%d\n",a);
+    }
+    printf("a=%d\n",a);
+    return 0;
+}
 
 //声明来自外部的变量，即两个页面的代码
+int a = 10;//此处的代码来自外部
+extern int a;//此处代码在内部，放在主函数的外面
+
+//变量生命周期
+//局部变量
+//进入作用域开始，出去作用域结束
+//全局变量
+//伴随着整个程序的生命周期
 
 
+//常量
+//字面常量 (30;3.14;'w'(字符)；'abc'(字符串)    )
+//const修饰的常变量  
+#include <stdio.h>
 
+int main()
+{
+    const int a =10;//加上const以后"本来a=20可以被执行并且输出结果a也从10被改成20"现在程序会报错不让你运行即改不了a=10;const修饰a 本质是变量但不能被修改，有常量的属性
+    a=20;
+    printf("%d\n",a);
 
+    return 0;
+}
 
+//
