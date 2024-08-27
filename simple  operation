@@ -54,17 +54,61 @@ extern int a;//此处代码在内部，放在主函数的外面
 
 
 //常量
-//字面常量 (30;3.14;'w'(字符)；'abc'(字符串)    )
+
+//字面常量 (30;3.14;'w'(字符)；'abc'(字符串))
+
+
 //const修饰的常变量  
 #include <stdio.h>
 
 int main()
 {
-    const int a =10;//加上const以后"本来a=20可以被执行并且输出结果a也从10被改成20"现在程序会报错不让你运行即改不了a=10;const修饰a 本质是变量但不能被修改，有常量的属性
+    const int a =10;//加上const以后"本来a=20可以被执行并且输出结果a也从10被改成20"现在程序会报错不让你运行即改不了a=10;const修饰a 本质是变量但不能被修改，有常量的属性;本质是变量，即被锁定的变量
     a=20;
     printf("%d\n",a);
 
     return 0;
 }
 
-//
+
+//define 定义的标识符常量
+例如
+#define MAX 100
+#define STR "abcdef"
+int main()
+{
+    printf("%d\n",MAX);//输出结果为100
+    int a =100;
+    printf("%d\n",a);//输出结果为100\n100
+    printf("%s\n",STR);
+    MAX =200;//err
+}
+
+
+//枚举常量(如三原色，性别)
+enum Color
+{
+    RED,
+    GREEN,
+    BLUE
+};
+
+int main()
+{
+    enum c =RED;
+    RED=10;//err
+    return 0;
+}
+
+
+
+//字符
+'a' 字符常量
+char ch ='w';字符常量放入变量
+"abcdef" 字符串
+//数组
+char arr1[]="abcdef";//7  其中隐藏了\0
+char arr2[]={'a','b','c','d','e','f'};
+printf("%s\n",arr1);
+printf("%s\n",arr2);
+
