@@ -24,8 +24,15 @@ int main()
     
     return 0;
 }
-//变量的作用域(作用范围)  分为 局部 全局(变量的作用范围是整个工程)
 
+
+
+
+
+
+
+
+//变量的作用域(作用范围)  分为 局部 全局(变量的作用范围是整个工程)
 //全局中的函数调用
 int a=10;
 void test()
@@ -53,23 +60,23 @@ extern int a;//此处代码在内部，放在主函数的外面
 //伴随着整个程序的生命周期
 
 
+
+
+
+
+
+
 //常量
-
 //字面常量 (30;3.14;'w'(字符)；'abc'(字符串))
-
-
 //const修饰的常变量  
 #include <stdio.h>
-
 int main()
 {
     const int a =10;//加上const以后"本来a=20可以被执行并且输出结果a也从10被改成20"现在程序会报错不让你运行即改不了a=10;const修饰a 本质是变量但不能被修改，有常量的属性;本质是变量，即被锁定的变量
     a=20;
     printf("%d\n",a);
-
     return 0;
 }
-
 
 //define 定义的标识符常量
 例如
@@ -83,7 +90,6 @@ int main()
     printf("%s\n",STR);
     MAX =200;//err
 }
-
 
 //枚举常量(如三原色，性别)
 enum Color
@@ -102,17 +108,42 @@ int main()
 
 
 
+
+
+
+
+
 //字符
 'a' 字符常量
 char ch ='w';字符常量放入变量
 "abcdef" 字符串
-//数组
-
+//数组的初步应用，为了证明\0的存在和意义
 char arr1[]="abcdef";//7  其中隐藏了\0，相当于遇到了一个终止命令，即结束命令(ta是一个转义字符，占据一个字节，但不算作字符串内容)
 char arr2[]={'a','b','c','d','e','f'};
-
 printf("%s\n",arr1);//输出结果为abcdef
-//若此处代码有效--> char arr2[]={'a','b','c','d','e','f','\0'};  则下方printf结果为abcdef
-printf("%s\n",arr2);//正常情况下不会输出abcdef因为字符不带有\0
 
-//相关函数strlen的运用
+//若此处代码有效--> char arr2[]={'a','b','c','d','e','f','\0'};  则下方第一个*printf结果为abcdef，第二个*printf结果为6 即数出了\0前面的长度
+
+*printf("%s\n",arr2);//正常情况下不会输出abcdef因为字符不带有\0；
+诸如 abcdef烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫慂?? 等输出结果
+
+//相关库函数strlen()的运用，得包含头文件string.h
+int len =strlen("abc");
+printf("%d\n",len);//结果为3
+printf("%d\n",strlen(arr1));//6
+*printf("%d\n",strlen(arr2));//随机数，根据电脑不同输出
+
+//转义字符(转变原来字符的意思)
+int main()
+{
+    printf("abcn");//在这里改成printf("abc\n");字符的意义将被改变
+    return 0;
+)
+}
+
+int main()
+{
+    printf("abc0def");//改成printf("abc\odef");同理意义也被改变
+}
+
+
