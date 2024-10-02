@@ -1,1 +1,19 @@
+//选择语句
+#include <stdio.h>
+int main()
+{
+    int coding=1;
+    printf("请输入1或0");
+    scanf("%d",&coding);
+    if(coding==1)
+    {
+        printf("你选择了1");
+    }
+    else
+    {
+        printf("你选择了0");
+    }
+    return 0;
+}
+
 
