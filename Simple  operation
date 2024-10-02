@@ -16,7 +16,7 @@ int main()
     int num1 =1;
     int num2 =2;
     
-    scanf("%d %d",&num1,&num2); //注意这里一定有两个&，并且两个%d之间没有逗号 意思是先输入一个数字，然后加一个逗号，再输入一个数字  scanf_f只能被VS(Visual Studio)认识
+    scanf("%d %d",&num1,&num2); //注意这里一定有两个&，并且两个%d之间没有逗号 意思是先输入一个数字，然后加一个空格，再输入一个数字  scanf_f只能被VS(Visual Studio)认识
     
     int sum = num1+num2;
     
